@@ -1,10 +1,14 @@
 require('./config/config');
 
 const express = require('express');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // initializations
 const app = express();
+
+// middlewares
+app.use(morgan('dev'));
 
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }));
@@ -14,7 +18,6 @@ app.use(express.json());
 
 // routes
 app.use(require('../routes'));
-app.use(require('../routes/usuario'));
 
 mongoose
   .connect(process.env.URLDB, {

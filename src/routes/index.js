@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
+router.use(require('./usuario'));
+router.use(require('./login'));
+
 router.get('/', (req, res) => {
-  console.log('Hello world!');
+  res.send({
+    ok: true,
+  });
 });
 
 module.exports = router;

@@ -12,4 +12,12 @@ helpers.encryptPassword = async (password) => {
   }
 };
 
+helpers.matchPassword = async (password, encryptPassword) => {
+  try {
+    return await bcrypt.compare(password, encryptPassword);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 module.exports = helpers;

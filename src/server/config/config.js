@@ -20,3 +20,8 @@ process.env.TOKEN_EXP = 60 * 60 * 24 * 30;
 
 // seed
 process.env.SEED = process.env.SEED || 'dev-seed';
+
+// google client id
+process.env.CLIENT_ID =
+  process.env.CLIENT_ID ||
+  '1008124149193-sgq0c4hs3ilt1p7k9ia6alf00bvta097.apps.googleusercontent.com';

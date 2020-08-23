@@ -4,6 +4,8 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
+const path = require('path');
+
 // initializations
 const app = express();
 
@@ -15,6 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(express.json());
+
+// static
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 // routes
 app.use(require('../routes'));

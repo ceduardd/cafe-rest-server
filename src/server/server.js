@@ -29,6 +29,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false,
   })
   .then((db) =>
     console.log(`BD conectada en ${db.connection.host}:${db.connection.port}`)

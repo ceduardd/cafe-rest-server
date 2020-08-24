@@ -12,7 +12,7 @@ const verifyToken = (req, res, next) => {
     }
 
     req.usuario = decoded.usuario;
-    console.log(decoded);
+    // console.log(decoded);
 
     next();
   });
